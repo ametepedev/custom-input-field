@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+:root{
+    --color-primary: #7abcf3;
+    --color-bg: #1e262e;
+    --color-light: rgba(255,255,255,0.25);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Trirong", serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    background: var(--color-bg);
+}
+.input-box{
+    position: relative;
+    min-width: 250px;
+}
+.input-box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-light);
+    background: var(--color-bg);
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: .5s;
+}
+.input-box span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: var(--color-light);
+    text-transform: uppercase;
+    transition: .5s;
+}
+.input-box input:valid ~span,
+.input-box input:focus ~span{
+    color: var(--color-bg);
+    transform: translate(10px,-6px);
+    font-size: 0.6em;
+    padding: 0 10px;
+    letter-spacing: 0.2em;
+    background: var(--color-primary);
+}
+
+.input-box:nth-child(2) input:valid ~span,
+.input-box:nth-child(2) input:focus ~span{
+    color: var(--color-primary);
+    background: var(--color-bg);
+    border: 1px solid var(--color-primary);
+}
+
+.input-box:nth-child(3) input:valid ~span,
+.input-box:nth-child(3) input:focus ~span{
+    color: var(--color-primary);
+    background: var(--color-bg);
+    border-left: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+}
+.input-box:nth-child(4) input:valid ~span,
+.input-box:nth-child(4) input:focus ~span{
+    color: var(--color-primary);
+    background: var(--color-bg);
+}
+
+.input-box input:valid ,
+.input-box input:focus{
+    border: 1px solid var(--color-primary);
+}
